@@ -4,7 +4,7 @@ services:
     image: 'spring-boot-psql-in-docker:latest'
     build:
       context: .
-    container_name: app
+
     depends_on:
       - db
     environment:
@@ -19,11 +19,10 @@ services:
     restart: always
     container_name: db
     environment:
-      - POSTGRES_USER=compose-postgres
-      - POSTGRES_PASSWORD=compose-postgres
+      POSTGRES_USER: compose-postgres
+      POSTGRES_PASSWORD: compose-postgres
   pgadmin:
-    container_name: pgadmin4_container
-    image: dpage/pgadmin4
+    image: dpage/pgadmin4:latest
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
