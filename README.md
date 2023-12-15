@@ -50,7 +50,7 @@ The next step is to package the spring boot application into a `.jar` file which
 mvn clean package
 ```
 
-### Docker Compose
+### Docker Compose File
 
 In this project we need 3 applications running in 3 separate containers. Our Spring Boot API, the Postgres Database and pgAdmin dashboard. A Docker compose file helps to define multiple containers at once. There is one located in [/demo-api/compose.yaml](/demo-api/compose.yaml). Each container is defined as a `service`.
 
@@ -93,7 +93,7 @@ docker compose up -d
 
 This command will run the containers in the background.
 
-To stop the containers:
+To stop and remove the containers:
 
 ```bash
 docker compose down
