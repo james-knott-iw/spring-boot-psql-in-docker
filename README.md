@@ -1,6 +1,6 @@
 # spring-boot-psql-in-docker
 
-This repository contains the code and instructions for a demonstration on how to containerise a Spring Boot application, Postgres Database and Pgadmin. With each application in 3 separate containers.
+This repository contains the code and instructions for a demonstration on how to containerise a Spring Boot API, Postgres Database and pgAdmin. With each application in 3 separate containers.
 
 ## System Requirements
 
@@ -56,7 +56,7 @@ In this project we need 3 applications running in 3 separate containers. Our Spr
 
 #### App
 
-The first service defined is `app`. This service runs our Spring Boot application container.
+The first service defined is `app`. This service runs our Spring Boot API container.
 
 - The service is based off a image called `spring-boot-psql-in-docker:latest`.
 - The build context specifies that the image will be built using a Dockerfile within the same directory i.e. `/demo-api`.
@@ -85,7 +85,7 @@ The third service defined is `pgadmin`. This service runs our pgAdmin container 
 
 ### Running the Containers
 
-To run these containers defined in [compose.yaml](/demo-api/compose.yaml):
+To run the containers defined in [compose.yaml](/demo-api/compose.yaml):
 
 ```bash
 docker compose up -d
@@ -99,12 +99,12 @@ To stop the containers:
 docker compose down
 ```
 
-### Testing the API
+### Testing the Spring Boot API
 
 - To test the Demo API, import the Postman requests JSON file [Person Requests.postman_collection.json](/demo-api/Demo%20API%20Requests.postman_collection.json). This Postman Collection contains requests to perform CRUD on Person and Pet Entities.  
 - There is also an Open API Schema using Swagger UI. Once the API is running can be accessed at [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
 
-### Access pgAdmin Dashboard
+### Access the pgAdmin Dashboard
 
 The pgAdmin dashboard is available at [http://localhost:5050](http://localhost:5050). The first time accessing the dashboard you will have to login.  
 
