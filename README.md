@@ -58,10 +58,10 @@ In this project we need 3 applications running in 3 separate containers. Our Spr
 
 The first service defined is `app`. This service runs our Spring Boot API container.
 
-- The service is based off a image called `spring-boot-psql-in-docker:latest`.
-- The build context specifies that the image will be built using a Dockerfile within the same directory i.e. `/demo-api`.
+- The service is based off an image called `spring-boot-psql-in-docker:latest`.
+- The build context specifies that the image will be built using a Dockerfile within the same directory i.e. `/demo-api`. This Dockerfile will build the `spring-boot-psql-in-docker:latest` image.
 - The `app` service `depends_on` the [db](#db) service. Therefore, the `app` service will start after the [db](#db) service service starts.
-- There are a three environment variables to set. `SPRING_DATASOURCE_URL` specifies the database URL so Spring knows where to connect to. `SPRING_DATA_SOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD` specify the credentials used to log into the database.
+- There are three environment variables to set. `SPRING_DATASOURCE_URL` specifies the database URL so Spring knows where to connect to. `SPRING_DATA_SOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD` specify the credentials used to log into the database.
 - Port `8080` on the host machine (your local machine) is mapped to port `8080` on the container. The Spring Boot application hosts the server on port `8080` on the container and this allows you to access it through port `8080` on your machine.
 
 #### DB
@@ -79,7 +79,7 @@ The third service defined is `pgadmin`. This service runs our pgAdmin container 
 
 - This service uses the `dpage/pgadmin4:latest` image.
 - `restart` is set to `always`. Once the container is started it will restart anytime it stops or fails.
-- Two environment variables are set. `PGADMIN_DEFAULT_EMAIL` and `PGADMIN_DEFAULT_PASSWORD` these are the admin credentials used to login to the pgAdmin dashboard. Instructions are in ... TODO
+- Two environment variables are set. `PGADMIN_DEFAULT_EMAIL` and `PGADMIN_DEFAULT_PASSWORD` these are the admin credentials used to login to the pgAdmin dashboard.
 - Port `5050` on the host machine(your machine) is mapped to to port `80` on the container. This will allow you to access the containers port `80` through port `5050` on your machine (the host).
 - This service depends on the [db](#db) service. Therefore, `pgadmin` will start after the [db](#db) service is running.
 
@@ -115,7 +115,7 @@ Once successfully logged in, you will be brought to the dashboard home page. To 
 
 - In the `General` tab, give your server the name `db`.
 - Navigate to the `Connection` tab.
-- For the `Host name/address` we can use the name of the Postgres service [db](#db).
+- For `Host name/address` we can use the name of the Postgres service [db](#db).
 - Make sure the port is `5432`.
 - `Username` is the `POSTGRES_USER` defined in the [db](#db) service.
 - `Password` is the `POSTGRES_PASSWORD` defined in the [db](#db) service.
