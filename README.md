@@ -47,7 +47,7 @@ cd demo-api
 The next step is to package the spring boot application into a `.jar` file which will be located at `/target/demo-api-0.0.1.jar`:
 
 ```bash
-mvn clean package
+mvn clean package -DskipTests
 ```
 
 ### Docker Compose File
