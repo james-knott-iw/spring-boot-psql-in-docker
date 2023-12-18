@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"james\",\r\n    \"address\": \"knott\"\r\n}",
+							"raw": "{\r\n    \"name\": \"james\",\r\n    \"address\": \"away\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -59,7 +59,18 @@
 					"name": "Read Persons",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/person/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"all"
+							]
+						}
 					},
 					"response": []
 				},
