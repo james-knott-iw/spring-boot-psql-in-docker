@@ -88,7 +88,7 @@ The third service defined is `pgadmin`. This service runs our pgAdmin container 
 To run the containers defined in [compose.yaml](/demo-api/compose.yaml):
 
 ```bash
-docker compose up -d
+docker-compose up -d
 ```
 
 This command will run the containers in the background.
@@ -96,7 +96,7 @@ This command will run the containers in the background.
 To stop and remove the containers:
 
 ```bash
-docker compose down
+docker-compose down
 ```
 
 ### Testing the Spring Boot API
@@ -122,3 +122,19 @@ Once successfully logged in, you will be brought to the dashboard home page. To 
 - Then click save and you should see the `db` server under `Servers` in the `Object Explorer`.
 
 Now if you look at `Databases`, you will see `compose-postgres` this is the Postgres database holding the `Person` and `Pet` tables for our Spring Boot API. Here you can explore the Postgres database and manage it using the admin UI.
+
+## Access Prometheus
+
+The Prometheus is a monitoring and alerting tool. It collects, stores and analyzes metrics from various sources. Prometheus offers insights into performance and system health. In this case, the source is our API.
+
+We're using the Prometheus official Docker image in this application. It is defined in [compose.yaml](/demo-api/compose.yaml). The port 9090 on the container is mapped to the host machines port 9090 which allows us to access to the application.
+
+Once the Spring Boot API is packaged and the Docker containers are running the Prometheus dashboard can be accessed at [http://localhost:9090](http://localhost:9090).
+
+## Access Grafana
+
+Grafana is a visualisation, monitoringg and troubleshooting tool. IT creates dashboards to visualise metrics from sources like Prometheus. Grafana allows you to customise dashboards with graphs, tables, charts and much more.
+
+Grafana will be running on a container based off the official Docker image. It is defined in [compose.yaml](/demo-api/compose.yaml). The port 3000 on the container is mapped to port 3000 on the host machine. This allows us to access the Grafana application at [http://localhost:3000](http://localhost:3000).
+
+You will be brought to a login screen the first time accessing the dashboard. To login use the username `admin` and password `admin`. After logging in the first time you will be prompted to change your login details if you wish.
