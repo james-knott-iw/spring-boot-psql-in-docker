@@ -123,7 +123,7 @@ Once successfully logged in, you will be brought to the dashboard home page. To 
 
 Now if you look at `Databases`, you will see `compose-postgres` this is the Postgres database holding the `Person` and `Pet` tables for our Spring Boot API. Here you can explore the Postgres database and manage it using the admin UI.
 
-## Access Prometheus
+### Access Prometheus
 
 The Prometheus is a monitoring and alerting tool. It collects, stores and analyzes metrics from various sources. Prometheus offers insights into performance and system health. In this case, the source is our API.
 
@@ -131,7 +131,7 @@ We're using the Prometheus official Docker image in this application. It is defi
 
 Once the Spring Boot API is packaged and the Docker containers are running the Prometheus dashboard can be accessed at [http://localhost:9090](http://localhost:9090).
 
-## Access Grafana
+### Access Grafana
 
 Grafana is a visualisation, monitoringg and troubleshooting tool. IT creates dashboards to visualise metrics from sources like Prometheus. Grafana allows you to customise dashboards with graphs, tables, charts and much more.
 
