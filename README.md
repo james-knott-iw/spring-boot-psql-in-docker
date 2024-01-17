@@ -17,19 +17,19 @@ This can be done by HTTPS, SSH or GitHubCLI.
 ### HTTPS
 
 ```bash
-git clone https://github.com/IntegrationWorks/spring-boot-psql-in-docker.git
+git clone https://github.com/james-knott-iw/spring-boot-psql-in-docker.git
 ```
 
 ### SSH
 
 ```bash
-git clone git@github.com:IntegrationWorks/spring-boot-psql-in-docker.git
+git clone git@github.com:james-knott-iw/spring-boot-psql-in-docker.git
 ```
 
 ### GitHubCLI
 
 ```bash
-gh repo clone IntegrationWorks/spring-boot-psql-in-docker
+gh repo clone james-knott-iw/spring-boot-psql-in-docker
 ```
 
 Open the `/spring-boot-psql-in-docker` directory in a terminal or IDE and follow the next instructions in [Demo Api](#demo-api).
